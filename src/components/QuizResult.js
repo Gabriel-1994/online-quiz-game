@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 function QuizResult({result,retry}){
     return (
         <div className = "result-screen">

@@ -22,8 +22,8 @@ function Question({question,totalQuestions,currentQuestion,setAnswer}){
         setTimeout(()=>{
             progressBar.current.classList.add("active");
         },0);
-        timer.current = setTimeout(goToNextQuestion, 10*1000);
-    },[question]);
+        timer.current = setTimeout(goToNextQuestion, 10*1000);                
+    },[question]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="question">
@@ -42,7 +42,7 @@ function Question({question,totalQuestions,currentQuestion,setAnswer}){
                     {
                         question.incorrect_answers.map((option,index)=>{
                             return (
-                                <div className={index==selectedOption ? "option active" : "option"}
+                                <div className={index===selectedOption ? "option active" : "option"}
                                 key={index}
                                 onClick={()=>setselectedOption(index)}
                                 >

@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import QuizResult from "./QuizResult";
 import Question from "./Question.js";
-//import QuestionList from "./questions.json";
-import axios from "axios";
 
 function QuizScreen({retry, QuestionList}){        
     
@@ -19,7 +17,7 @@ function QuizScreen({retry, QuestionList}){
             // }
             console.log(question.correct_answer)
             console.log(question.incorrect_answers[markedAnswers[index]])
-            if(question.correct_answer == question.incorrect_answers[markedAnswers[index]]){
+            if(question.correct_answer === question.incorrect_answers[markedAnswers[index]]){
                 correct++;
             }
         });

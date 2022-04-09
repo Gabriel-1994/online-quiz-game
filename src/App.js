@@ -4,7 +4,7 @@ import QuizScreen from "./components/QuizScreen.js";
 import JoinScreen from "./components/JoinScreen.js";
 import "./App.css";
 import axios from "axios";
-import request from 'request';
+
 
 
 /*  
@@ -56,12 +56,12 @@ function App(){
   
 
   for (var j in QuestionList){
-    if(QuestionList[j]['incorrect_answers'].indexOf(QuestionList[j]['correct_answer']) == -1) 
+    if(QuestionList[j]['incorrect_answers'].indexOf(QuestionList[j]['correct_answer']) === -1) 
       QuestionList[j]['incorrect_answers'].push(QuestionList[j]['correct_answer'])
-    QuestionList[j]['question'] = QuestionList[j]['question'].replace(/&quot;/g, '\"');
+    QuestionList[j]['question'] = QuestionList[j]['question'].replace(/&quot;/g, '"');
     QuestionList[j]['question'] = QuestionList[j]['question'].replace(/&#039;/g, '\'');
     for(var ans in QuestionList[j]['incorrect_answers']){
-      QuestionList[j]['incorrect_answers'][ans] = QuestionList[j]['incorrect_answers'][ans].replace(/&quot;/g, '\"');
+      QuestionList[j]['incorrect_answers'][ans] = QuestionList[j]['incorrect_answers'][ans].replace(/&quot;/g, '"');
       QuestionList[j]['incorrect_answers'][ans] = QuestionList[j]['incorrect_answers'][ans].replace(/&#039;/g, '\'');
     }      
   }
